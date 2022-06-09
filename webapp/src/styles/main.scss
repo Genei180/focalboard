@@ -1,4 +1,5 @@
 @import 'typography';
+@import 'modifiers';
 
 html {
     height: 100%;
@@ -38,6 +39,10 @@ html {
         user-select: none;
     }
 
+    .TeamIcon {
+        box-sizing: content-box;
+    }
+
     input,
     textarea,
     select,
@@ -55,7 +60,7 @@ html {
 
     a {
         text-decoration: none;
-        color: var(--link-color-rgb);
+        color: rgb(var(--link-color-rgb));
     }
 
     hr {
@@ -135,6 +140,7 @@ html {
     /*-- Property list --*/
 
     .octo-propertyvalue {
+        max-width: 100%;
         font-size: 12px;
         color: rgb(var(--center-channel-color-rgb));
 

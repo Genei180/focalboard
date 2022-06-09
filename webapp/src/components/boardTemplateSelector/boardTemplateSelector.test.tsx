@@ -6,7 +6,7 @@ import React from 'react'
 import {MockStoreEnhanced} from 'redux-mock-store'
 import {createMemoryHistory} from 'history'
 
-import {mocked} from 'ts-jest/utils'
+import {mocked} from 'jest-mock'
 
 import {Provider as ReduxProvider} from 'react-redux'
 
@@ -14,8 +14,11 @@ import {MemoryRouter, Router} from 'react-router-dom'
 
 import Mutator from '../../mutator'
 import {Utils} from '../../utils'
-import {UserWorkspace} from '../../user'
+import {Team} from '../../store/teams'
+import {IUser} from '../../user'
 import {mockDOM, mockStateStore, wrapDNDIntl} from '../../testUtils'
+
+import client from '../../octoClient'
 
 import BoardTemplateSelector from './boardTemplateSelector'
 
@@ -31,7 +34,8 @@ jest.mock('react-router-dom', () => {
 })
 jest.mock('../../octoClient', () => {
     return {
-        getSubtree: jest.fn(() => Promise.resolve([])),
+        getAllBlocks: jest.fn(() => Promise.resolve([])),
+        patchUserConfig: jest.fn(() => Promise.resolve({})),
     }
 })
 jest.mock('../../utils')
@@ -40,10 +44,22 @@ jest.mock('../../mutator')
 describe('components/boardTemplateSelector/boardTemplateSelector', () => {
     const mockedUtils = mocked(Utils, true)
     const mockedMutator = mocked(Mutator, true)
-    const workspace1: UserWorkspace = {
-        id: 'workspace_1',
-        title: 'Workspace 1',
-        boardCount: 1,
+    const mockedOctoClient = mocked(client, true)
+    const team1: Team = {
+        id: 'team-1',
+        title: 'Team 1',
+        signupToken: '',
+        updateAt: 0,
+        modifiedBy: 'user-1',
+    }
+    const me: IUser = {
+        id: 'user-id-1',
+        username: 'username_1',
+        email: '',
+        props: {},
+        create_at: 0,
+        update_at: 0,
+        is_bot: false
     }
     const template1Title = 'Template 1'
     const globalTemplateTitle = 'Template Global'
@@ -53,44 +69,56 @@ describe('components/boardTemplateSelector/boardTemplateSelector', () => {
     beforeEach(() => {
         jest.clearAllMocks()
         const state = {
-            users: {
-                me: {
-                    id: 'user_id_1',
-                },
+            teams: {
+                current: team1,
             },
-            workspace: {
-                userWorkspaces: new Array<UserWorkspace>(workspace1),
-                current: workspace1,
+            users: {
+                me,
+                boardUsers: [me],
             },
             boards: {
                 boards: [
                     {
                         id: '2',
                         title: boardTitle,
-                        workspaceId: workspace1.id,
-                        fields: {
-                            icon: '🚴🏻‍♂️',
-                            cardProperties: [
-                                {id: 'id-6'},
-                            ],
-                            dateDisplayPropertyId: 'id-6',
-                        },
+                        teamId: team1.id,
+                        icon: '🚴🏻‍♂️',
+                        cardProperties: [
+                            {id: 'id-6'},
+                        ],
+                        dateDisplayPropertyId: 'id-6',
                     },
                 ],
                 templates: [
                     {
                         id: '1',
-                        workspaceId: workspace1.id,
+                        teamId: team1.id,
                         title: template1Title,
-                        fields: {
-                            icon: '🚴🏻‍♂️',
-                            cardProperties: [
-                                {id: 'id-5'},
-                            ],
-                            dateDisplayPropertyId: 'id-5',
-                        },
+                        icon: '🚴🏻‍♂️',
+                        cardProperties: [
+                            {id: 'id-5'},
+                        ],
+                        dateDisplayPropertyId: 'id-5',
+                    },
+                    {
+                        id: '2',
+                        teamId: team1.id,
+                        title: 'Welcome to Boards!',
+                        icon: '❄️',
+                        cardProperties: [
+                            {id: 'id-5'},
+                        ],
+                        dateDisplayPropertyId: 'id-5',
                     },
                 ],
+                membersInBoards: {
+                    ['1']: {userId: me.id, schemeAdmin: true},
+                    ['2']: {userId: me.id, schemeAdmin: true},
+                },
+                myBoardMemberships: {
+                    ['1']: {userId: me.id, schemeAdmin: true},
+                    ['2']: {userId: me.id, schemeAdmin: true},
+                },
                 cards: [],
                 views: [],
             },
@@ -98,16 +126,14 @@ describe('components/boardTemplateSelector/boardTemplateSelector', () => {
                 value: [{
                     id: 'global-1',
                     title: globalTemplateTitle,
-                    workspaceId: '0',
-                    fields: {
-                        icon: '🚴🏻‍♂️',
-                        cardProperties: [
-                            {id: 'global-id-5'},
-                        ],
-                        dateDisplayPropertyId: 'global-id-5',
-                        isTemplate: true,
-                        templateVer: 2,
-                    },
+                    teamId: '0',
+                    icon: '🚴🏻‍♂️',
+                    cardProperties: [
+                        {id: 'global-id-5'},
+                    ],
+                    dateDisplayPropertyId: 'global-id-5',
+                    isTemplate: true,
+                    templateVersion: 2,
                 }],
             },
         }
@@ -221,7 +247,7 @@ describe('components/boardTemplateSelector/boardTemplateSelector', () => {
                 await userEvent.click(deleteConfirm!)
             })
 
-            expect(mockedMutator.deleteBlock).toBeCalledTimes(1)
+            expect(mockedMutator.deleteBoard).toBeCalledTimes(1)
         })
         test('return BoardTemplateSelector and click edit template icon', async () => {
             const history = createMemoryHistory()
@@ -236,7 +262,6 @@ describe('components/boardTemplateSelector/boardTemplateSelector', () => {
             const editIcon = screen.getByText(template1Title).parentElement?.querySelector('.EditIcon')
             expect(editIcon).not.toBeNull()
             userEvent.click(editIcon!)
-            expect(history.push).toBeCalledTimes(1)
         })
         test('return BoardTemplateSelector and click to add board from template', async () => {
             render(wrapDNDIntl(
@@ -259,7 +284,7 @@ describe('components/boardTemplateSelector/boardTemplateSelector', () => {
             })
 
             await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledTimes(1))
-            await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledWith(expect.anything(), expect.anything(), expect.anything(), expect.anything(), false))
+            await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledWith(team1.id, expect.anything(), expect.anything(), expect.anything(), '1', team1.id))
         })
         test('return BoardTemplateSelector and click to add board from global template', async () => {
             render(wrapDNDIntl(
@@ -281,7 +306,37 @@ describe('components/boardTemplateSelector/boardTemplateSelector', () => {
                 userEvent.click(useTemplateButton!)
             })
             await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledTimes(1))
-            await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledWith(expect.anything(), expect.anything(), expect.anything(), expect.anything(), true))
+            await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledWith(team1.id, expect.anything(), expect.anything(), expect.anything(), 'global-1', team1.id))
+        })
+        test('should start product tour on choosing welcome template', async () => {
+            render(wrapDNDIntl(
+                <ReduxProvider store={store}>
+                    <BoardTemplateSelector onClose={jest.fn()}/>
+                </ReduxProvider>
+                ,
+            ), {wrapper: MemoryRouter})
+            const divBoardToSelect = screen.getByText('Welcome to Boards!').parentElement
+            expect(divBoardToSelect).not.toBeNull()
+
+            act(() => {
+                userEvent.click(divBoardToSelect!)
+            })
+
+            const useTemplateButton = screen.getByText('Use this template').parentElement
+            expect(useTemplateButton).not.toBeNull()
+            act(() => {
+                userEvent.click(useTemplateButton!)
+            })
+
+            await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledTimes(1))
+            await waitFor(() => expect(mockedMutator.addBoardFromTemplate).toBeCalledWith(team1.id, expect.anything(), expect.anything(), expect.anything(), '2', team1.id))
+            expect(mockedOctoClient.patchUserConfig).toBeCalledWith('user-id-1', {
+                updatedFields: {
+                    'focalboard_onboardingTourStarted': '1',
+                    'focalboard_onboardingTourStep': '0',
+                    'focalboard_tourCategory': 'onboarding',
+                },
+            })
         })
     })
 })

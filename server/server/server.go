@@ -74,12 +74,12 @@ func New(params Params) (*Server, error) {
 		return nil, err
 	}
 
-	authenticator := auth.New(params.Cfg, params.DBStore)
+	authenticator := auth.New(params.Cfg, params.DBStore, params.PermissionsService)
 
 	// if no ws adapter is provided, we spin up a websocket server
 	wsAdapter := params.WSAdapter
 	if wsAdapter == nil {
-		wsAdapter = ws.NewServer(authenticator, params.SingleUserToken, params.Cfg.AuthMode == MattermostAuthMod, params.Logger)
+		wsAdapter = ws.NewServer(authenticator, params.SingleUserToken, params.Cfg.AuthMode == MattermostAuthMod, params.Logger, params.DBStore)
 	}
 
 	filesBackendSettings := filestore.FileBackendSettings{}
@@ -130,25 +130,27 @@ func New(params Params) (*Server, error) {
 	}
 
 	appServices := app.Services{
-		Auth:          authenticator,
-		Store:         params.DBStore,
-		FilesBackend:  filesBackend,
-		Webhook:       webhookClient,
-		Metrics:       metricsService,
-		Notifications: notificationService,
-		Logger:        params.Logger,
+		Auth:             authenticator,
+		Store:            params.DBStore,
+		FilesBackend:     filesBackend,
+		Webhook:          webhookClient,
+		Metrics:          metricsService,
+		Notifications:    notificationService,
+		Logger:           params.Logger,
+		Permissions:      params.PermissionsService,
+		SkipTemplateInit: utils.IsRunningUnitTests(),
 	}
 	app := app.New(params.Cfg, wsAdapter, appServices)
 
-	focalboardAPI := api.NewAPI(app, params.SingleUserToken, params.Cfg.AuthMode, params.Logger, auditService)
+	focalboardAPI := api.NewAPI(app, params.SingleUserToken, params.Cfg.AuthMode, params.PermissionsService, params.Logger, auditService)
 
 	// Local router for admin APIs
 	localRouter := mux.NewRouter()
 	focalboardAPI.RegisterAdminRoutes(localRouter)
 
-	// Init workspace
-	if _, err := app.GetRootWorkspace(); err != nil {
-		params.Logger.Error("Unable to get root workspace", mlog.Err(err))
+	// Init team
+	if _, err := app.GetRootTeam(); err != nil {
+		params.Logger.Error("Unable to get root team", mlog.Err(err))
 		return nil, err
 	}
 
@@ -205,7 +207,7 @@ func New(params Params) (*Server, error) {
 	return &server, nil
 }
 
-func NewStore(config *config.Configuration, logger *mlog.Logger) (store.Store, error) {
+func NewStore(config *config.Configuration, isSingleUser bool, logger *mlog.Logger) (store.Store, error) {
 	sqlDB, err := sql.Open(config.DBType, config.DBConfigString)
 	if err != nil {
 		logger.Error("connectDatabase failed", mlog.Err(err))
@@ -225,6 +227,7 @@ func NewStore(config *config.Configuration, logger *mlog.Logger) (store.Store, e
 		Logger:           logger,
 		DB:               sqlDB,
 		IsPlugin:         false,
+		IsSingleUser:     isSingleUser,
 	}
 
 	var db store.Store
@@ -272,13 +275,13 @@ func (s *Server) Start() error {
 		for blockType, count := range blockCounts {
 			s.metricsService.ObserveBlockCount(blockType, count)
 		}
-		workspaceCount, err := s.store.GetWorkspaceCount()
+		teamCount, err := s.store.GetTeamCount()
 		if err != nil {
-			s.logger.Error("Error updating metrics", mlog.String("group", "workspaces"), mlog.Err(err))
+			s.logger.Error("Error updating metrics", mlog.String("group", "teams"), mlog.Err(err))
 			return
 		}
-		s.logger.Log(mlog.LvlFBMetrics, "Workspace metrics collected", mlog.Int64("workspace_count", workspaceCount))
-		s.metricsService.ObserveWorkspaceCount(workspaceCount)
+		s.logger.Log(mlog.LvlFBMetrics, "Team metrics collected", mlog.Int64("team_count", teamCount))
+		s.metricsService.ObserveTeamCount(teamCount)
 	}
 	// metricsUpdater()   Calling this immediately causes integration unit tests to fail.
 	s.metricsUpdaterTask = scheduler.CreateRecurringTask("updateMetrics", metricsUpdater, updateMetricsTaskFrequency)
@@ -336,6 +339,8 @@ func (s *Server) Shutdown() error {
 		s.logger.Warn("Error occurred when shutting down notification service", mlog.Err(err))
 	}
 
+	s.app.Shutdown()
+
 	defer s.logger.Info("Server.Shutdown")
 
 	return s.store.Shutdown()
@@ -351,6 +356,10 @@ func (s *Server) Logger() *mlog.Logger {
 
 func (s *Server) App() *app.App {
 	return s.app
+}
+
+func (s *Server) Store() store.Store {
+	return s.store
 }
 
 func (s *Server) UpdateAppConfig() {
@@ -472,13 +481,13 @@ func initTelemetry(opts telemetryOptions) *telemetry.Service {
 		}
 		return m, nil
 	})
-	telemetryService.RegisterTracker("workspaces", func() (telemetry.Tracker, error) {
-		count, err := opts.app.GetWorkspaceCount()
+	telemetryService.RegisterTracker("teams", func() (telemetry.Tracker, error) {
+		count, err := opts.app.GetTeamCount()
 		if err != nil {
 			return nil, err
 		}
 		m := map[string]interface{}{
-			"workspaces": count,
+			"teams": count,
 		}
 		return m, nil
 	})

@@ -68,7 +68,7 @@ func (p *Plugin) setConfiguration(configuration *configuration) {
 }
 
 // OnConfigurationChange is invoked when configuration changes may have been made.
-func (p *Plugin) OnConfigurationChange() error { //nolint
+func (p *Plugin) OnConfigurationChange() error {
 	// Have we been setup by OnActivate?
 	if p.wsPluginAdapter == nil {
 		return nil
@@ -88,6 +88,15 @@ func (p *Plugin) OnConfigurationChange() error { //nolint
 
 	// handle feature flags
 	p.server.Config().FeatureFlags = parseFeatureFlags(mmconfig.FeatureFlags.ToMap())
+
+	// handle Data Retention settings
+	enableBoardsDeletion := false
+	if mmconfig.DataRetentionSettings.EnableBoardsDeletion != nil {
+		enableBoardsDeletion = true
+	}
+	p.server.Config().EnableDataRetention = enableBoardsDeletion
+	p.server.Config().DataRetentionDays = *mmconfig.DataRetentionSettings.BoardsRetentionDays
+
 	p.server.UpdateAppConfig()
 	p.wsPluginAdapter.BroadcastConfigChange(*p.server.App().GetClientConfig())
 	return nil

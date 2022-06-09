@@ -7,13 +7,15 @@ import {Provider as ReduxProvider} from 'react-redux'
 
 import '@testing-library/jest-dom'
 
-import {mocked} from 'ts-jest/utils'
+import {mocked} from 'jest-mock'
 
 import {TextBlock} from '../../blocks/textBlock'
 
 import {mockDOM, wrapDNDIntl, mockStateStore} from '../../testUtils'
 
 import {Utils} from '../../utils'
+
+import {TestBlockFactory} from "../../test/testBlockFactory"
 
 import TextElement from './textElement'
 
@@ -24,9 +26,8 @@ const mockedUtils = mocked(Utils, true)
 mockedUtils.createGuid.mockReturnValue('test-id')
 const defaultBlock: TextBlock = {
     id: 'test-id',
-    workspaceId: 'test-id',
+    boardId: 'test-id',
     parentId: 'test-id',
-    rootId: 'test-id',
     modifiedBy: 'test-user-id',
     schema: 0,
     type: 'text',
@@ -42,9 +43,12 @@ describe('components/content/TextElement', () => {
         mockDOM()
     })
 
+    const board1 = TestBlockFactory.createBoard()
+    board1.id = 'board-id-1'
+
     const state = {
         users: {
-            workspaceUsers: {
+            boardUsers: {
                 1: {username: 'abc'},
                 2: {username: 'd'},
                 3: {username: 'e'},
@@ -52,6 +56,12 @@ describe('components/content/TextElement', () => {
                 5: {username: 'g'},
             },
         },
+        boards: {
+            current: 'board-id-1',
+            boards: {
+                [board1.id]: board1,
+            }
+        }
     }
     const store = mockStateStore([], state)
 

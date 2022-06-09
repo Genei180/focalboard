@@ -41,15 +41,9 @@ exports[`components/centerPanel return centerPanel and click on card to show car
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -59,7 +53,7 @@ exports[`components/centerPanel return centerPanel and click on card to show car
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -154,7 +148,7 @@ exports[`components/centerPanel return centerPanel and click on card to show car
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -170,24 +164,26 @@ exports[`components/centerPanel return centerPanel and click on card to show car
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -248,13 +244,18 @@ exports[`components/centerPanel return centerPanel and click on card to show car
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -360,7 +361,7 @@ exports[`components/centerPanel return centerPanel and click on card to show car
             class="Label propColorOrange "
           >
             <input
-              class="Editable undefined"
+              class="Editable "
               placeholder="New Select"
               spellcheck="true"
               title="Q1"
@@ -412,7 +413,7 @@ exports[`components/centerPanel return centerPanel and click on card to show car
             class="Label propColorBlue "
           >
             <input
-              class="Editable undefined"
+              class="Editable "
               placeholder="New Select"
               spellcheck="true"
               title="Q2"
@@ -576,641 +577,6 @@ exports[`components/centerPanel return centerPanel and click on card to show car
 </div>
 `;
 
-exports[`components/centerPanel return centerPanel and click on new card to edit template 1`] = `
-<div>
-  <div
-    class="BoardComponent"
-  >
-    <div
-      class="top-head"
-    >
-      <div
-        class="TopBar"
-      >
-        <a
-          class="link"
-          href="https://www.focalboard.com/fwlink/feedback-focalboard.html?v=1.0.0"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Give Feedback
-        </a>
-        <a
-          href="https://www.focalboard.com/guide/user?utm_source=webapp"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <i
-            class="CompassIcon icon-help-circle-outline HelpIcon"
-          />
-        </a>
-      </div>
-      <div
-        class="mid-head"
-      >
-        <div
-          class="ViewTitle"
-        >
-          <div
-            class="add-buttons add-visible"
-          >
-            <button
-              type="button"
-            >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
-              <span>
-                hide description
-              </span>
-            </button>
-          </div>
-          <div
-            class="title"
-          >
-            <div
-              class="BlockIconSelector"
-            >
-              <div
-                aria-label="menuwrapper"
-                class="MenuWrapper"
-                role="button"
-              >
-                <div
-                  class="octo-icon size-m"
-                >
-                  <span>
-                    i
-                  </span>
-                </div>
-              </div>
-            </div>
-            <input
-              class="Editable title"
-              placeholder="Untitled board"
-              spellcheck="true"
-              title="board title"
-              value="board title"
-            />
-          </div>
-          <div
-            class="description"
-          >
-            <div
-              class="MarkdownEditor octo-editor  "
-            >
-              <div
-                class="octo-editor-preview"
-                data-testid="preview-element"
-              />
-              <div
-                class="MarkdownEditorInput MarkdownEditorInput--IsNotEditing"
-              >
-                <div
-                  class="DraftEditor-root"
-                >
-                  <div
-                    class="DraftEditor-editorContainer"
-                  >
-                    <div
-                      aria-autocomplete="list"
-                      aria-expanded="false"
-                      class="notranslate public-DraftEditor-content"
-                      contenteditable="true"
-                      role="combobox"
-                      spellcheck="false"
-                      style="outline: none; user-select: text; white-space: pre-wrap; word-wrap: break-word;"
-                    >
-                      <div
-                        data-contents="true"
-                      >
-                        <div
-                          class=""
-                          data-block="true"
-                          data-editor="123"
-                          data-offset-key="123-0-0"
-                        >
-                          <div
-                            class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"
-                            data-offset-key="123-0-0"
-                          >
-                            <span
-                              data-offset-key="123-0-0"
-                            >
-                              <span
-                                data-text="true"
-                              >
-                                description
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="shareButtonWrapper"
-        >
-          <div
-            class="ShareBoardButton"
-          >
-            <button
-              title="Share board"
-              type="button"
-            >
-              <i
-                class="CompassIcon icon-globe CompassIcon"
-              />
-              <span>
-                Share
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        class="ViewHeader"
-      >
-        <div
-          class="viewSelector"
-        >
-          <input
-            class="Editable undefined"
-            placeholder="Untitled View"
-            spellcheck="true"
-            title="view title"
-            value="view title"
-          />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
-            >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
-          </div>
-        </div>
-        <div
-          class="octo-spacer"
-        />
-        <div
-          aria-label="Properties menu"
-          class="MenuWrapper"
-          role="button"
-        >
-          <button
-            type="button"
-          >
-            <span>
-              Properties
-            </span>
-          </button>
-        </div>
-        <div
-          aria-label="menuwrapper"
-          class="MenuWrapper"
-          role="button"
-        >
-          <button
-            type="button"
-          >
-            <span>
-              Group by: 
-              <span
-                id="groupByLabel"
-              >
-                name
-              </span>
-            </span>
-          </button>
-        </div>
-        <div
-          class="ModalWrapper"
-        >
-          <button
-            type="button"
-          >
-            <span>
-              Filter
-            </span>
-          </button>
-        </div>
-        <div
-          aria-label="menuwrapper"
-          class="MenuWrapper"
-          role="button"
-        >
-          <button
-            type="button"
-          >
-            <span>
-              Sort
-            </span>
-          </button>
-        </div>
-        <button
-          type="button"
-        >
-          <span>
-            Search
-          </span>
-        </button>
-        <div
-          class="ModalWrapper"
-        >
-          <div
-            aria-label="View header menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
-            >
-              <i
-                class="CompassIcon icon-dots-horizontal OptionsIcon"
-              />
-            </button>
-          </div>
-        </div>
-        <div
-          class="ButtonWithMenu"
-        >
-          <div
-            class="button-text"
-          >
-            New
-          </div>
-          <div
-            aria-label="menuwrapper"
-            class="MenuWrapper"
-            role="button"
-          >
-            <div
-              class="button-dropdown"
-            >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="Table"
-    >
-      <div
-        class="octo-table-body"
-      >
-        <div
-          class="octo-table-header TableHeaders"
-          id="mainBoardHeader"
-        >
-          <div
-            class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
-          >
-            <div
-              aria-label="menuwrapper"
-              class="MenuWrapper"
-              role="button"
-            >
-              <span
-                class="Label empty "
-              >
-                Name
-              </span>
-            </div>
-            <div
-              class="octo-spacer"
-            />
-            <div
-              class="HorizontalGrip"
-              draggable="true"
-            />
-          </div>
-        </div>
-        <div
-          class="table-row-container"
-        >
-          <div
-            class="octo-table-group"
-          >
-            <div
-              class="octo-group-header-cell expanded"
-              draggable="true"
-              style="opacity: 1;"
-            >
-              <div
-                class="octo-table-cell"
-                style="width: 100px;"
-              >
-                <button
-                  type="button"
-                >
-                  <svg
-                    class="DisclosureTriangleIcon Icon"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polygon
-                      points="37,35 37,65 63,50"
-                    />
-                  </svg>
-                </button>
-                <span
-                  class="Label empty "
-                  title="Items with an empty name property will go here. This column cannot be removed."
-                >
-                  No name
-                </span>
-                
-              </div>
-              <button
-                type="button"
-              >
-                <span>
-                  0
-                </span>
-              </button>
-              <div
-                aria-label="menuwrapper"
-                class="MenuWrapper"
-                role="button"
-              >
-                <button
-                  type="button"
-                >
-                  <i
-                    class="CompassIcon icon-dots-horizontal OptionsIcon"
-                  />
-                </button>
-              </div>
-              <button
-                type="button"
-              >
-                <i
-                  class="CompassIcon icon-plus AddIcon"
-                />
-              </button>
-            </div>
-          </div>
-          <div
-            class="octo-table-group"
-          >
-            <div
-              class="octo-group-header-cell expanded"
-              draggable="true"
-              style="opacity: 1;"
-            >
-              <div
-                class="octo-table-cell"
-                style="width: 100px;"
-              >
-                <button
-                  type="button"
-                >
-                  <svg
-                    class="DisclosureTriangleIcon Icon"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polygon
-                      points="37,35 37,65 63,50"
-                    />
-                  </svg>
-                </button>
-                <span
-                  class="Label propColorOrange "
-                >
-                  <input
-                    class="Editable undefined"
-                    placeholder="New Select"
-                    spellcheck="true"
-                    title="Q1"
-                    value="Q1"
-                  />
-                </span>
-              </div>
-              <button
-                type="button"
-              >
-                <span>
-                  2
-                </span>
-              </button>
-              <div
-                aria-label="menuwrapper"
-                class="MenuWrapper"
-                role="button"
-              >
-                <button
-                  type="button"
-                >
-                  <i
-                    class="CompassIcon icon-dots-horizontal OptionsIcon"
-                  />
-                </button>
-              </div>
-              <button
-                type="button"
-              >
-                <i
-                  class="CompassIcon icon-plus AddIcon"
-                />
-              </button>
-            </div>
-            <div
-              class="TableRow octo-table-row"
-              draggable="true"
-              style="opacity: 1;"
-            >
-              <div
-                class="octo-table-cell title-cell"
-                id="mainBoardHeader"
-                style="width: 100px;"
-              >
-                <div
-                  class="octo-icontitle"
-                >
-                  <div
-                    class="octo-icon"
-                  >
-                    i
-                  </div>
-                  <input
-                    class="Editable undefined"
-                    placeholder="Untitled"
-                    spellcheck="true"
-                    title="card1"
-                    value="card1"
-                  />
-                </div>
-                <div
-                  class="open-button"
-                >
-                  <button
-                    type="button"
-                  >
-                    <span>
-                      Open
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="TableRow octo-table-row"
-              draggable="true"
-              style="opacity: 1;"
-            >
-              <div
-                class="octo-table-cell title-cell"
-                id="mainBoardHeader"
-                style="width: 100px;"
-              >
-                <div
-                  class="octo-icontitle"
-                >
-                  <div
-                    class="octo-icon"
-                  >
-                    i
-                  </div>
-                  <input
-                    class="Editable undefined"
-                    placeholder="Untitled"
-                    spellcheck="true"
-                    title="card2"
-                    value="card2"
-                  />
-                </div>
-                <div
-                  class="open-button"
-                >
-                  <button
-                    type="button"
-                  >
-                    <span>
-                      Open
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="octo-table-group"
-          >
-            <div
-              class="octo-group-header-cell expanded"
-              draggable="true"
-              style="opacity: 1;"
-            >
-              <div
-                class="octo-table-cell"
-                style="width: 100px;"
-              >
-                <button
-                  type="button"
-                >
-                  <svg
-                    class="DisclosureTriangleIcon Icon"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polygon
-                      points="37,35 37,65 63,50"
-                    />
-                  </svg>
-                </button>
-                <span
-                  class="Label propColorBlue "
-                >
-                  <input
-                    class="Editable undefined"
-                    placeholder="New Select"
-                    spellcheck="true"
-                    title="Q2"
-                    value="Q2"
-                  />
-                </span>
-              </div>
-              <button
-                type="button"
-              >
-                <span>
-                  0
-                </span>
-              </button>
-              <div
-                aria-label="menuwrapper"
-                class="MenuWrapper"
-                role="button"
-              >
-                <button
-                  type="button"
-                >
-                  <i
-                    class="CompassIcon icon-dots-horizontal OptionsIcon"
-                  />
-                </button>
-              </div>
-              <button
-                type="button"
-              >
-                <i
-                  class="CompassIcon icon-plus AddIcon"
-                />
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          class="octo-table-footer"
-        />
-        <div
-          class="CalculationRow octo-table-row"
-        >
-          <div
-            class="Calculation count octo-table-cell   "
-            style="width: 100px;"
-            tabindex="0"
-          >
-            <span
-              class="calculationLabel"
-            >
-              Count
-            </span>
-            <span
-              class="calculationValue"
-            >
-              2
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`components/centerPanel return centerPanel and press touch 1 with readonly 1`] = `
 <div>
   <div
@@ -1253,20 +619,14 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
-                aria-label="menuwrapper"
-                class="MenuWrapper"
-                role="button"
+                class="octo-icon size-m readonly"
               >
-                <div
-                  class="octo-icon size-m"
-                >
-                  <span>
-                    i
-                  </span>
-                </div>
+                <span>
+                  i
+                </span>
               </div>
             </div>
             <input
@@ -1340,7 +700,20 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
         </div>
         <div
           class="shareButtonWrapper"
-        />
+        >
+          <div
+            class="ShareBoardLoginButton"
+          >
+            <button
+              title="Login"
+              type="button"
+            >
+              <span>
+                Login
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
       <div
         class="ViewHeader"
@@ -1349,37 +722,44 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
           class="viewSelector"
         >
           <input
-            class="Editable readonly undefined"
+            class="Editable readonly "
             placeholder="Untitled View"
             readonly=""
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
           class="octo-spacer"
         />
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
       </div>
     </div>
     <div
@@ -1394,7 +774,7 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -1486,7 +866,7 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable readonly undefined"
+                    class="Editable readonly "
                     placeholder="New Select"
                     readonly=""
                     spellcheck="true"
@@ -1509,6 +889,42 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -1522,7 +938,7 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
                     i
                   </div>
                   <input
-                    class="Editable readonly undefined"
+                    class="Editable readonly "
                     placeholder="Untitled"
                     readonly=""
                     spellcheck="true"
@@ -1549,6 +965,42 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -1562,7 +1014,7 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
                     i
                   </div>
                   <input
-                    class="Editable readonly undefined"
+                    class="Editable readonly "
                     placeholder="Untitled"
                     readonly=""
                     spellcheck="true"
@@ -1613,7 +1065,7 @@ exports[`components/centerPanel return centerPanel and press touch 1 with readon
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable readonly undefined"
+                    class="Editable readonly "
                     placeholder="New Select"
                     readonly=""
                     spellcheck="true"
@@ -1702,15 +1154,9 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -1720,7 +1166,7 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -1815,7 +1261,7 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -1831,24 +1277,26 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -1909,13 +1357,18 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -1969,7 +1422,7 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -1987,7 +1440,6 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -2085,7 +1537,7 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -2127,6 +1579,42 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -2140,7 +1628,7 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -2166,6 +1654,42 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -2179,7 +1703,7 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -2229,7 +1753,7 @@ exports[`components/centerPanel return centerPanel and press touch ctrl+d for on
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -2337,15 +1861,9 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -2355,7 +1873,7 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -2450,7 +1968,7 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -2466,24 +1984,26 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -2544,13 +2064,18 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -2604,7 +2129,7 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -2622,7 +2147,6 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -2720,7 +2244,7 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -2762,6 +2286,42 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -2775,7 +2335,7 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -2801,6 +2361,42 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -2814,7 +2410,7 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -2864,7 +2460,7 @@ exports[`components/centerPanel return centerPanel and press touch del for one c
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -2972,15 +2568,9 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -2990,7 +2580,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -3085,7 +2675,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -3101,24 +2691,26 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -3179,13 +2771,18 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -3239,7 +2836,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -3257,7 +2854,6 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -3355,7 +2951,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -3397,6 +2993,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -3410,7 +3042,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -3436,6 +3068,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -3449,7 +3117,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -3499,7 +3167,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -3607,15 +3275,9 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -3625,7 +3287,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -3720,7 +3382,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -3736,24 +3398,26 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -3814,13 +3478,18 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -3874,7 +3543,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -3892,7 +3561,6 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -3990,7 +3658,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -4032,6 +3700,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -4045,7 +3749,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -4071,6 +3775,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -4084,7 +3824,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -4134,7 +3874,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for one c
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -4242,15 +3982,9 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -4260,7 +3994,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -4355,7 +4089,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -4371,24 +4105,26 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -4449,13 +4185,18 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -4509,7 +4250,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -4527,7 +4268,6 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -4625,7 +4365,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -4667,6 +4407,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -4680,7 +4456,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -4706,6 +4482,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -4719,7 +4531,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -4769,7 +4581,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -4877,15 +4689,9 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -4895,7 +4701,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -4990,7 +4796,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -5006,24 +4812,26 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -5084,13 +4892,18 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -5144,7 +4957,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -5162,7 +4975,6 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -5260,7 +5072,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -5302,6 +5114,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -5315,7 +5163,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -5341,6 +5189,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -5354,7 +5238,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -5404,7 +5288,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -5512,15 +5396,9 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -5530,7 +5408,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -5625,7 +5503,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -5641,24 +5519,26 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -5719,13 +5599,18 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -5779,7 +5664,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -5797,7 +5682,6 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -5895,7 +5779,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -5937,6 +5821,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -5950,7 +5870,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -5976,6 +5896,42 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -5989,7 +5945,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -6039,7 +5995,7 @@ exports[`components/centerPanel return centerPanel and press touch esc for two c
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -6147,15 +6103,9 @@ exports[`components/centerPanel return centerPanel and select one card and click
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -6165,7 +6115,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -6260,7 +6210,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -6276,24 +6226,26 @@ exports[`components/centerPanel return centerPanel and select one card and click
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -6354,13 +6306,18 @@ exports[`components/centerPanel return centerPanel and select one card and click
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -6414,7 +6371,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -6432,7 +6389,6 @@ exports[`components/centerPanel return centerPanel and select one card and click
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -6530,7 +6486,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -6572,6 +6528,42 @@ exports[`components/centerPanel return centerPanel and select one card and click
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -6585,7 +6577,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -6611,6 +6603,42 @@ exports[`components/centerPanel return centerPanel and select one card and click
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -6624,7 +6652,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -6674,7 +6702,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -6782,15 +6810,9 @@ exports[`components/centerPanel return centerPanel and select one card and click
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -6800,7 +6822,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -6895,7 +6917,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -6911,24 +6933,26 @@ exports[`components/centerPanel return centerPanel and select one card and click
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -6989,13 +7013,18 @@ exports[`components/centerPanel return centerPanel and select one card and click
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -7049,7 +7078,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -7067,7 +7096,6 @@ exports[`components/centerPanel return centerPanel and select one card and click
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -7165,7 +7193,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -7207,6 +7235,42 @@ exports[`components/centerPanel return centerPanel and select one card and click
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -7220,7 +7284,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -7246,6 +7310,42 @@ exports[`components/centerPanel return centerPanel and select one card and click
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -7259,7 +7359,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card2"
@@ -7309,7 +7409,7 @@ exports[`components/centerPanel return centerPanel and select one card and click
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"
@@ -7417,15 +7517,9 @@ exports[`components/centerPanel should match snapshot for Gallery 1`] = `
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -7435,7 +7529,7 @@ exports[`components/centerPanel should match snapshot for Gallery 1`] = `
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -7530,7 +7624,7 @@ exports[`components/centerPanel should match snapshot for Gallery 1`] = `
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -7546,24 +7640,26 @@ exports[`components/centerPanel should match snapshot for Gallery 1`] = `
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -7606,13 +7702,18 @@ exports[`components/centerPanel should match snapshot for Gallery 1`] = `
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -7730,15 +7831,9 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -7748,7 +7843,7 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -7843,7 +7938,7 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -7859,24 +7954,26 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -7937,13 +8034,18 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -8049,7 +8151,7 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
             class="Label propColorOrange "
           >
             <input
-              class="Editable undefined"
+              class="Editable "
               placeholder="New Select"
               spellcheck="true"
               title="Q1"
@@ -8101,7 +8203,7 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
             class="Label propColorBlue "
           >
             <input
-              class="Editable undefined"
+              class="Editable "
               placeholder="New Select"
               spellcheck="true"
               title="Q2"
@@ -8273,15 +8375,9 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -8291,7 +8387,7 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -8325,53 +8421,6 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
                 class="octo-editor-preview"
                 data-testid="preview-element"
               />
-              <div
-                class="MarkdownEditorInput MarkdownEditorInput--IsNotEditing"
-              >
-                <div
-                  class="DraftEditor-root"
-                >
-                  <div
-                    class="DraftEditor-editorContainer"
-                  >
-                    <div
-                      aria-autocomplete="list"
-                      aria-expanded="false"
-                      class="notranslate public-DraftEditor-content"
-                      contenteditable="true"
-                      role="combobox"
-                      spellcheck="false"
-                      style="outline: none; user-select: text; white-space: pre-wrap; word-wrap: break-word;"
-                    >
-                      <div
-                        data-contents="true"
-                      >
-                        <div
-                          class=""
-                          data-block="true"
-                          data-editor="123"
-                          data-offset-key="123-0-0"
-                        >
-                          <div
-                            class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"
-                            data-offset-key="123-0-0"
-                          >
-                            <span
-                              data-offset-key="123-0-0"
-                            >
-                              <span
-                                data-text="true"
-                              >
-                                description
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -8386,7 +8435,7 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -8402,24 +8451,26 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -8480,13 +8531,18 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -8592,7 +8648,7 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
             class="Label propColorOrange "
           >
             <input
-              class="Editable undefined"
+              class="Editable "
               placeholder="New Select"
               spellcheck="true"
               title="Q1"
@@ -8644,7 +8700,7 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
             class="Label propColorBlue "
           >
             <input
-              class="Editable undefined"
+              class="Editable "
               placeholder="New Select"
               spellcheck="true"
               title="Q2"
@@ -8816,15 +8872,9 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
             <button
               type="button"
             >
-              <svg
-                class="HideIcon Icon"
-                viewBox="0 0 640 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M634 471L36 3.51A16 16 0 0 0 13.51 6l-10 12.49A16 16 0 0 0 6 41l598 467.49a16 16 0 0 0 22.49-2.49l10-12.49A16 16 0 0 0 634 471zM296.79 146.47l134.79 105.38C429.36 191.91 380.48 144 320 144a112.26 112.26 0 0 0-23.21 2.47zm46.42 219.07L208.42 260.16C210.65 320.09 259.53 368 320 368a113 113 0 0 0 23.21-2.46zM320 112c98.65 0 189.09 55 237.93 144a285.53 285.53 0 0 1-44 60.2l37.74 29.5a333.7 333.7 0 0 0 52.9-75.11 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64c-36.7 0-71.71 7-104.63 18.81l46.41 36.29c18.94-4.3 38.34-7.1 58.22-7.1zm0 288c-98.65 0-189.08-55-237.93-144a285.47 285.47 0 0 1 44.05-60.19l-37.74-29.5a333.6 333.6 0 0 0-52.89 75.1 32.35 32.35 0 0 0 0 29.19C89.72 376.41 197.08 448 320 448c36.7 0 71.71-7.05 104.63-18.81l-46.41-36.28C359.28 397.2 339.89 400 320 400z"
-                />
-              </svg>
+              <i
+                class="CompassIcon icon-eye-off-outline undefined"
+              />
               <span>
                 hide description
               </span>
@@ -8834,7 +8884,7 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
             class="title"
           >
             <div
-              class="BlockIconSelector"
+              class="IconSelector"
             >
               <div
                 aria-label="menuwrapper"
@@ -8929,7 +8979,7 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
               type="button"
             >
               <i
-                class="CompassIcon icon-globe CompassIcon"
+                class="CompassIcon icon-lock-outline LockOutlineIcon"
               />
               <span>
                 Share
@@ -8945,24 +8995,26 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
           class="viewSelector"
         >
           <input
-            class="Editable undefined"
+            class="Editable "
             placeholder="Untitled View"
             spellcheck="true"
             title="view title"
             value="view title"
           />
-          <div
-            aria-label="View menu"
-            class="MenuWrapper"
-            role="button"
-          >
-            <button
-              type="button"
+          <div>
+            <div
+              aria-label="View menu"
+              class="MenuWrapper"
+              role="button"
             >
-              <i
-                class="CompassIcon icon-chevron-down DropdownIcon"
-              />
-            </button>
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-chevron-down DropdownIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -9023,13 +9075,18 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
             </span>
           </button>
         </div>
-        <button
-          type="button"
+        <div
+          class="board-search-field"
         >
-          <span>
-            Search
-          </span>
-        </button>
+          <i
+            class="CompassIcon icon-magnify board-search-icon"
+          />
+          <input
+            class="Editable "
+            placeholder="Search cards"
+            value=""
+          />
+        </div>
         <div
           class="ModalWrapper"
         >
@@ -9083,7 +9140,7 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
         >
           <div
             class="octo-table-cell header-cell"
-            style="overflow: unset; width: 100px; opacity: 1;"
+            style="overflow: unset; opacity: 1; width: 100px;"
           >
             <div
               aria-label="menuwrapper"
@@ -9101,7 +9158,6 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
             />
             <div
               class="HorizontalGrip"
-              draggable="true"
             />
           </div>
         </div>
@@ -9199,7 +9255,7 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
                   class="Label propColorOrange "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q1"
@@ -9241,6 +9297,42 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
               style="opacity: 1;"
             >
               <div
+                class="action-cell octo-table-cell-btn"
+              >
+                <div
+                  aria-label="menuwrapper"
+                  class="MenuWrapper optionsMenu"
+                  role="button"
+                >
+                  <button
+                    aria-label="MenuBtn"
+                    title="MenuBtn"
+                    type="button"
+                  >
+                    <i
+                      class="CompassIcon icon-dots-horizontal OptionsIcon"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                >
+                  <svg
+                    class="GripIcon Icon"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0V0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
                 class="octo-table-cell title-cell"
                 id="mainBoardHeader"
                 style="width: 100px;"
@@ -9254,7 +9346,7 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
                     i
                   </div>
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="Untitled"
                     spellcheck="true"
                     title="card1"
@@ -9304,7 +9396,7 @@ exports[`components/centerPanel should match snapshot for Table 1`] = `
                   class="Label propColorBlue "
                 >
                   <input
-                    class="Editable undefined"
+                    class="Editable "
                     placeholder="New Select"
                     spellcheck="true"
                     title="Q2"

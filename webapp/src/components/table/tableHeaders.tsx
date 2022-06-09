@@ -16,6 +16,7 @@ import {OctoUtils} from '../../octoUtils'
 import './table.scss'
 
 import TableHeader from './tableHeader'
+import {useColumnResize} from './tableColumnResizeContext'
 
 type Props = {
     board: Board
@@ -23,25 +24,23 @@ type Props = {
     activeView: BoardView
     views: BoardView[]
     readonly: boolean
-    resizingColumn: string;
-    offset: number;
-    columnRefs: Map<string, React.RefObject<HTMLDivElement>>
 }
 
 const TableHeaders = (props: Props): JSX.Element => {
-    const {board, cards, activeView, resizingColumn, views, offset, columnRefs} = props
+    const {board, cards, activeView, views} = props
     const intl = useIntl()
+    const columnResize = useColumnResize()
 
     const onAutoSizeColumn = useCallback((columnID: string, headerWidth: number) => {
         let longestSize = headerWidth
-        const visibleProperties = board.fields.cardProperties.filter(() => activeView.fields.visiblePropertyIds.includes(columnID)) || []
-        const columnRef = columnRefs.get(columnID)
-        if (!columnRef?.current) {
+        const visibleProperties = board.cardProperties.filter(() => activeView.fields.visiblePropertyIds.includes(columnID)) || []
+        const columnRef = columnResize.cellRef(columnID)
+        if (!columnRef) {
             return
         }
 
         let template: IPropertyTemplate | undefined
-        const columnFontPadding = Utils.getFontAndPaddingFromCell(columnRef.current)
+        const columnFontPadding = Utils.getFontAndPaddingFromCell(columnRef)
         let perItemPadding = 0
         if (columnID !== Constants.titleColumnId) {
             template = visibleProperties.find((t: IPropertyTemplate) => t.id === columnID)
@@ -53,8 +52,8 @@ const TableHeaders = (props: Props): JSX.Element => {
                 // Need to calculate it manually here.
                 // DOM Object hierarchy should be {cell -> property -> [value1, value2, etc]}
                 let valueCount = 0
-                if (columnRef?.current?.childElementCount > 0) {
-                    const propertyElement = columnRef.current.children.item(0) as Element
+                if (columnRef.childElementCount > 0) {
+                    const propertyElement = columnRef.children.item(0) as Element
                     if (propertyElement) {
                         valueCount = propertyElement.childElementCount
                         if (valueCount > 0) {
@@ -105,20 +104,20 @@ const TableHeaders = (props: Props): JSX.Element => {
         columnWidths[columnID] = longestSize
         const newView = createBoardView(activeView)
         newView.fields.columnWidths = columnWidths
-        mutator.updateBlock(newView, activeView, 'autosize column')
+        mutator.updateBlock(board.id, newView, activeView, 'autosize column')
     }, [activeView, board, cards])
 
     const visiblePropertyTemplates = useMemo(() => (
-        activeView.fields.visiblePropertyIds.map((id) => board.fields.cardProperties.find((t) => t.id === id)).filter((i) => i) as IPropertyTemplate[]
-    ), [board.fields.cardProperties, activeView.fields.visiblePropertyIds])
+        activeView.fields.visiblePropertyIds.map((id) => board.cardProperties.find((t) => t.id === id)).filter((i) => i) as IPropertyTemplate[]
+    ), [board.cardProperties, activeView.fields.visiblePropertyIds])
 
     const onDropToColumn = useCallback(async (template: IPropertyTemplate, container: IPropertyTemplate) => {
         Utils.log(`ondrop. Source column: ${template.name}, dest column: ${container.name}`)
 
         // Move template to new index
         const destIndex = container ? activeView.fields.visiblePropertyIds.indexOf(container.id) : 0
-        await mutator.changeViewVisiblePropertiesOrder(activeView, template, destIndex >= 0 ? destIndex : 0)
-    }, [activeView.fields.visiblePropertyIds])
+        await mutator.changeViewVisiblePropertiesOrder(board.id, activeView, template, destIndex >= 0 ? destIndex : 0)
+    }, [board.id, activeView.fields.visiblePropertyIds])
 
     const titleSortOption = activeView.fields.sortOptions?.find((o) => o.propertyId === Constants.titleColumnId)
     let titleSorted: 'up' | 'down' | 'none' = 'none'
@@ -145,7 +144,6 @@ const TableHeaders = (props: Props): JSX.Element => {
                 cards={cards}
                 views={views}
                 template={{id: Constants.titleColumnId, name: 'title', type: 'text', options: []}}
-                offset={resizingColumn === Constants.titleColumnId ? offset : 0}
                 onDrop={onDropToColumn}
                 onAutoSizeColumn={onAutoSizeColumn}
             />
@@ -168,7 +166,6 @@ const TableHeaders = (props: Props): JSX.Element => {
                         views={views}
                         template={template}
                         key={template.id}
-                        offset={resizingColumn === template.id ? offset : 0}
                         onDrop={onDropToColumn}
                         onAutoSizeColumn={onAutoSizeColumn}
                     />

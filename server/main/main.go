@@ -13,6 +13,7 @@ import (
 	"github.com/mattermost/focalboard/server/model"
 	"github.com/mattermost/focalboard/server/server"
 	"github.com/mattermost/focalboard/server/services/config"
+	"github.com/mattermost/focalboard/server/services/permissions/localpermissions"
 )
 import (
 	"github.com/mattermost/mattermost-server/v6/shared/mlog"
@@ -140,16 +141,19 @@ func main() {
 		config.Port = *pPort
 	}
 
-	db, err := server.NewStore(config, logger)
+	db, err := server.NewStore(config, singleUser, logger)
 	if err != nil {
 		logger.Fatal("server.NewStore ERROR", mlog.Err(err))
 	}
 
+	permissionsService := localpermissions.New(db, logger)
+
 	params := server.Params{
-		Cfg:             config,
-		SingleUserToken: singleUserToken,
-		DBStore:         db,
-		Logger:          logger,
+		Cfg:                config,
+		SingleUserToken:    singleUserToken,
+		DBStore:            db,
+		Logger:             logger,
+		PermissionsService: permissionsService,
 	}
 
 	server, err := server.New(params)
@@ -228,16 +232,20 @@ func startServer(webPath string, filesPath string, port int, singleUserToken, db
 		config.DBConfigString = dbConfigString
 	}
 
-	db, err := server.NewStore(config, logger)
+	singleUser := len(singleUserToken) > 0
+	db, err := server.NewStore(config, singleUser, logger)
 	if err != nil {
 		logger.Fatal("server.NewStore ERROR", mlog.Err(err))
 	}
 
+	permissionsService := localpermissions.New(db, logger)
+
 	params := server.Params{
-		Cfg:             config,
-		SingleUserToken: singleUserToken,
-		DBStore:         db,
-		Logger:          logger,
+		Cfg:                config,
+		SingleUserToken:    singleUserToken,
+		DBStore:            db,
+		Logger:             logger,
+		PermissionsService: permissionsService,
 	}
 
 	pServer, err = server.New(params)

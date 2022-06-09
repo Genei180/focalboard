@@ -2,18 +2,17 @@ package sqlstore
 
 import (
 	"database/sql"
+	"net/url"
+
+	"github.com/mattermost/mattermost-server/v6/plugin"
 
 	sq "github.com/Masterminds/squirrel"
 
+	"github.com/mattermost/focalboard/server/model"
 	"github.com/mattermost/mattermost-plugin-api/cluster"
 
+	mmModel "github.com/mattermost/mattermost-server/v6/model"
 	"github.com/mattermost/mattermost-server/v6/shared/mlog"
-)
-
-const (
-	mysqlDBType    = "mysql"
-	sqliteDBType   = "sqlite3"
-	postgresDBType = "postgres"
 )
 
 // SQLStore is a SQL database.
@@ -23,8 +22,11 @@ type SQLStore struct {
 	tablePrefix      string
 	connectionString string
 	isPlugin         bool
+	isSingleUser     bool
 	logger           *mlog.Logger
 	NewMutexFn       MutexFactory
+	pluginAPI        *plugin.API
+	isBinaryParam    bool
 }
 
 // MutexFactory is used by the store in plugin mode to generate
@@ -46,16 +48,39 @@ func New(params Params) (*SQLStore, error) {
 		connectionString: params.ConnectionString,
 		logger:           params.Logger,
 		isPlugin:         params.IsPlugin,
+		isSingleUser:     params.IsSingleUser,
 		NewMutexFn:       params.NewMutexFn,
+		pluginAPI:        params.PluginAPI,
 	}
 
-	err := store.Migrate()
+	var err error
+	store.isBinaryParam, err = store.computeBinaryParam()
+	if err != nil {
+		params.Logger.Error(`Cannot compute binary parameter`, mlog.Err(err))
+		return nil, err
+	}
+
+	err = store.Migrate()
 	if err != nil {
 		params.Logger.Error(`Table creation / migration failed`, mlog.Err(err))
 
 		return nil, err
 	}
 	return store, nil
+}
+
+// computeBinaryParam returns whether the data source uses binary_parameters
+// when using Postgres.
+func (s *SQLStore) computeBinaryParam() (bool, error) {
+	if s.dbType != model.PostgresDBType {
+		return false, nil
+	}
+
+	url, err := url.Parse(s.connectionString)
+	if err != nil {
+		return false, err
+	}
+	return url.Query().Get("binary_parameters") == "yes", nil
 }
 
 // Shutdown close the connection with the store.
@@ -77,19 +102,23 @@ func (s *SQLStore) DBType() string {
 
 func (s *SQLStore) getQueryBuilder(db sq.BaseRunner) sq.StatementBuilderType {
 	builder := sq.StatementBuilder
-	if s.dbType == postgresDBType || s.dbType == sqliteDBType {
+	if s.dbType == model.PostgresDBType || s.dbType == model.SqliteDBType {
 		builder = builder.PlaceholderFormat(sq.Dollar)
 	}
 
 	return builder.RunWith(db)
 }
 
-func (s *SQLStore) escapeField(fieldName string) string { //nolint:unparam
-	if s.dbType == mysqlDBType {
+func (s *SQLStore) escapeField(fieldName string) string {
+	if s.dbType == model.MysqlDBType {
 		return "`" + fieldName + "`"
 	}
-	if s.dbType == postgresDBType || s.dbType == sqliteDBType {
+	if s.dbType == model.PostgresDBType || s.dbType == model.SqliteDBType {
 		return "\"" + fieldName + "\""
 	}
 	return fieldName
+}
+
+func (s *SQLStore) getLicense(db sq.BaseRunner) *mmModel.License {
+	return nil
 }

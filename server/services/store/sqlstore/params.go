@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
+	"github.com/mattermost/mattermost-server/v6/plugin"
+
 	"github.com/mattermost/mattermost-server/v6/shared/mlog"
 )
 
@@ -14,7 +16,9 @@ type Params struct {
 	Logger           *mlog.Logger
 	DB               *sql.DB
 	IsPlugin         bool
+	IsSingleUser     bool
 	NewMutexFn       MutexFactory
+	PluginAPI        *plugin.API
 }
 
 func (p Params) CheckValid() error {

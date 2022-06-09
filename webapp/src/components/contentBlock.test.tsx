@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import {act, render, screen} from '@testing-library/react'
 
 import React, {ReactNode, ReactElement} from 'react'
-import {mocked} from 'ts-jest/utils'
+import {mocked} from 'jest-mock'
 import {Provider as ReduxProvider} from 'react-redux'
 
 import userEvent from '@testing-library/user-event'
@@ -37,9 +37,8 @@ describe('components/contentBlock', () => {
     mockedOcto.getFileAsDataUrl.mockResolvedValue('test.jpg')
 
     const board = TestBlockFactory.createBoard()
-    board.fields.cardProperties = []
+    board.cardProperties = []
     board.id = 'board-id'
-    board.rootId = board.id
     const boardView = TestBlockFactory.createBoardView(board)
     boardView.id = board.id
     const card = TestBlockFactory.createCard(board)
@@ -66,9 +65,12 @@ describe('components/contentBlock', () => {
         addBlock: jest.fn(),
     })
 
+    const board1 = TestBlockFactory.createBoard()
+    board1.id = 'board-id-1'
+
     const state = {
         users: {
-            workspaceUsers: {
+            boardUsers: {
                 1: {username: 'abc'},
                 2: {username: 'd'},
                 3: {username: 'e'},
@@ -76,6 +78,12 @@ describe('components/contentBlock', () => {
                 5: {username: 'g'},
             },
         },
+        boards: {
+            current: 'board-id-1',
+            boards: {
+                [board1.id]: board1,
+            }
+        }
     }
     const store = mockStateStore([], state)
 
