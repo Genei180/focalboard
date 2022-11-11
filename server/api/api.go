@@ -178,7 +178,6 @@ func (a *API) userIsGuest(userID string) (bool, error) {
 // Response helpers
 
 func (a *API) errorResponse(w http.ResponseWriter, r *http.Request, err error) {
-	a.logger.Error(err.Error())
 	errorResponse := model.ErrorResponse{Error: err.Error()}
 
 	switch {

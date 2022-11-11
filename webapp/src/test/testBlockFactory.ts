@@ -173,7 +173,6 @@ class TestBlockFactory {
             userID: '',
             teamID: '',
             collapsed: false,
-            type: 'custom',
         }
     }
 

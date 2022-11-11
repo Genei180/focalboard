@@ -70,16 +70,6 @@ func createBoardsConfig(mmconfig mm_model.Config, baseURL string, serverID strin
 
 	featureFlags := parseFeatureFlags(mmconfig.FeatureFlags.ToMap())
 
-	showEmailAddress := false
-	if mmconfig.PrivacySettings.ShowEmailAddress != nil {
-		showEmailAddress = *mmconfig.PrivacySettings.ShowEmailAddress
-	}
-
-	showFullName := false
-	if mmconfig.PrivacySettings.ShowFullName != nil {
-		showFullName = *mmconfig.PrivacySettings.ShowFullName
-	}
-
 	return &config.Configuration{
 		ServerRoot:               baseURL + "/plugins/focalboard",
 		Port:                     -1,
@@ -109,8 +99,6 @@ func createBoardsConfig(mmconfig mm_model.Config, baseURL string, serverID strin
 		EnableDataRetention:      enableBoardsDeletion,
 		DataRetentionDays:        *mmconfig.DataRetentionSettings.BoardsRetentionDays,
 		TeammateNameDisplay:      *mmconfig.TeamSettings.TeammateNameDisplay,
-		ShowEmailAddress:         showEmailAddress,
-		ShowFullName:             showFullName,
 	}
 }
 

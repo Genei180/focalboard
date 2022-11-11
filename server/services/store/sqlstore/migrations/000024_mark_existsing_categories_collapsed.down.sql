@@ -1,1 +1,1 @@
-SELECT 1;
+UPDATE {{.prefix}}categories SET collapsed = false;

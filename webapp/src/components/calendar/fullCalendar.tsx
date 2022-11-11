@@ -25,9 +25,10 @@ import ConfirmationDialogBox, {ConfirmationDialogBoxProps} from '../confirmation
 
 import './fullcalendar.scss'
 import MenuWrapper from '../../widgets/menuWrapper'
+import IconButton from '../../widgets/buttons/iconButton'
 import CardActionsMenu from '../cardActionsMenu/cardActionsMenu'
+import OptionsIcon from '../../widgets/icons/options'
 import TelemetryClient, {TelemetryActions, TelemetryCategory} from '../../telemetry/telemetryClient'
-import CardActionsMenuIcon from '../cardActionsMenu/cardActionsMenuIcon'
 
 const oneDay = 60 * 60 * 24 * 1000
 
@@ -155,7 +156,7 @@ const CalendarFullView = (props: Props): JSX.Element|null => {
                         className='optionsMenu'
                         stopPropagationOnToggle={true}
                     >
-                        <CardActionsMenuIcon/>
+                        <IconButton icon={<OptionsIcon/>}/>
                         <CardActionsMenu
                             cardId={card.id}
                             onClickDelete={() => openConfirmationDialogBox(card)}

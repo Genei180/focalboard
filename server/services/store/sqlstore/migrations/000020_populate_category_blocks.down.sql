@@ -1,1 +1,1 @@
-SELECT 1;
+DELETE from {{.prefix}}category_boards;

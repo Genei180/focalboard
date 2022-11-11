@@ -25,6 +25,7 @@
     &:hover {
         background-color: rgba(var(--center-channel-color-rgb), 0.05);
         overflow: initial;
+        margin-left: -60px;
 
         .delete-button {
             display: block;
@@ -38,10 +39,13 @@
             @include z-index(table-row-action-cell);
             position: relative;
             align-items: center;
+            left: 8px;
+            padding: 8px;
+            height: 44px;
         }
 
         .octo-table-cell-btn {
-            visibility: visible;
+            display: flex;
         }
 
         .title-cell {
@@ -49,14 +53,9 @@
         }
     }
 
-    &.readonly:hover {
-        margin-left: unset;
-    }
-
     .action-cell {
-        display: flex;
-        visibility: hidden;
-        margin-left: 8px;
+        display: none;
+        margin-left: 20px;
     }
 
     .URLProperty:hover .Button_Copy {

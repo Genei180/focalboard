@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -69,7 +70,7 @@ func main() {
 }
 
 func readPlan(path string) (*plan.Plan, error) {
-	raw, err := os.ReadFile(path)
+	raw, err := ioutil.ReadFile(path)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read plan file %q: %v", path, err)
 	}

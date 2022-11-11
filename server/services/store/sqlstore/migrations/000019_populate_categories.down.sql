@@ -1,1 +1,1 @@
-SELECT 1;
+DELETE from {{.prefix}}categories;

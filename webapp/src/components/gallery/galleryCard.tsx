@@ -11,6 +11,8 @@ import mutator from '../../mutator'
 import {getCardContents} from '../../store/contents'
 import {useAppSelector} from '../../store/hooks'
 import TelemetryClient, {TelemetryActions, TelemetryCategory} from '../../telemetry/telemetryClient'
+import IconButton from '../../widgets/buttons/iconButton'
+import OptionsIcon from '../../widgets/icons/options'
 import MenuWrapper from '../../widgets/menuWrapper'
 import Tooltip from '../../widgets/tooltip'
 import {CardDetailProvider} from '../cardDetail/cardDetailContext'
@@ -21,7 +23,6 @@ import './galleryCard.scss'
 import CardBadges from '../cardBadges'
 import CardActionsMenu from '../cardActionsMenu/cardActionsMenu'
 import ConfirmationDialogBox, {ConfirmationDialogBoxProps} from '../confirmationDialogBox'
-import CardActionsMenuIcon from '../cardActionsMenu/cardActionsMenuIcon'
 
 type Props = {
     board: Board
@@ -89,7 +90,7 @@ const GalleryCard = (props: Props) => {
                         className='optionsMenu'
                         stopPropagationOnToggle={true}
                     >
-                        <CardActionsMenuIcon/>
+                        <IconButton icon={<OptionsIcon/>}/>
                         <CardActionsMenu
                             cardId={card!.id}
                             onClickDelete={() => setShowConfirmationDialogBox(true)}

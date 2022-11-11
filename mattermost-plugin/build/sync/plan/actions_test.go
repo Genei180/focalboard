@@ -1,6 +1,7 @@
 package plan_test
 
 import (
+	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
@@ -14,7 +15,7 @@ func TestCopyDirectory(t *testing.T) {
 	assert := assert.New(t)
 
 	// Create a temporary directory to copy to.
-	dir, err := os.TempDir("", "test")
+	dir, err := ioutil.TempDir("", "test")
 	assert.Nil(err)
 	defer os.RemoveAll(dir)
 
@@ -32,7 +33,7 @@ func TestOverwriteFileAction(t *testing.T) {
 	assert := assert.New(t)
 
 	// Create a temporary directory to copy to.
-	dir, err := os.TempDir("", "test")
+	dir, err := ioutil.TempDir("", "test")
 	assert.Nil(err)
 	defer os.RemoveAll(dir)
 
@@ -61,7 +62,7 @@ func TestOverwriteDirectoryAction(t *testing.T) {
 	assert := assert.New(t)
 
 	// Create a temporary directory to copy to.
-	dir, err := os.TempDir("", "test")
+	dir, err := ioutil.TempDir("", "test")
 	assert.Nil(err)
 	defer os.RemoveAll(dir)
 
@@ -92,9 +93,9 @@ func compareDirectories(t *testing.T, pathA, pathB string) {
 	assert := assert.New(t)
 	t.Helper()
 
-	aContents, err := os.ReadDir(pathA)
+	aContents, err := ioutil.ReadDir(pathA)
 	assert.Nil(err)
-	bContents, err := os.ReadDir(pathB)
+	bContents, err := ioutil.ReadDir(pathB)
 	assert.Nil(err)
 	assert.Len(aContents, len(bContents))
 

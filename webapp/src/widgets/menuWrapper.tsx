@@ -87,9 +87,6 @@ const MenuWrapper = (props: Props) => {
     if (props.disabled) {
         className += ' disabled'
     }
-    if (open) {
-        className += ' override menuOpened'
-    }
     if (props.className) {
         className += ' ' + props.className
     }

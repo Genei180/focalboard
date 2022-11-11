@@ -1,1 +1,2 @@
-SELECT 1;
+ALTER TABLE {{.prefix}}blocks
+DROP COLUMN modified_by;

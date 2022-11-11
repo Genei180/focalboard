@@ -1,1 +1,1 @@
-SELECT 1;
+ALTER TABLE {{.prefix}}categories DROP COLUMN collapsed;

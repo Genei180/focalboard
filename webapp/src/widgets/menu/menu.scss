@@ -16,7 +16,6 @@
     border: 1px solid rgba(var(--center-channel-color-rgb), 0.16);
     border-radius: var(--default-rad);
     box-shadow: var(--elevation-4);
-    max-width: 320px;
     cursor: default;
 
     &.fixed {
@@ -59,7 +58,6 @@
         }
 
         .menu-option__content {
-            overflow: hidden;
             flex: 1;
         }
 
@@ -74,7 +72,6 @@
             font-weight: 400;
             height: 32px;
             padding: 4px 20px;
-            white-space: nowrap;
             cursor: pointer;
 
             &.menu-option--disabled {
@@ -114,7 +111,7 @@
                 display: block;
             }
 
-            .menu-name {
+            > .menu-name {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 flex-grow: 1;

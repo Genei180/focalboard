@@ -1,1 +1,2 @@
-SELECT 1;
+DROP TABLE {{.prefix}}users;
+DROP TABLE {{.prefix}}sessions;

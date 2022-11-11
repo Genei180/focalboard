@@ -489,10 +489,6 @@ func (a *API) handleDuplicateBoard(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if toTeam == "" {
-		toTeam = board.TeamID
-	}
-
 	if toTeam == "" && !a.permissions.HasPermissionToTeam(userID, board.TeamID, model.PermissionViewTeam) {
 		a.errorResponse(w, r, model.NewErrPermission("access denied to team"))
 		return

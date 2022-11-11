@@ -18,14 +18,10 @@ const BaseTextEditor = (props: PropertyProps & {validator: () => boolean, spellC
         if (value !== (props.card.fields.properties[props.propertyTemplate?.id || ''] || '')) {
             mutator.changePropertyValue(props.board.id, props.card, props.propertyTemplate?.id || '', value)
         }
-    }, [props.board.id, props.card, props.propertyTemplate?.id, value])
+    }, [props.card, props.propertyTemplate, value])
 
     const saveTextPropertyRef = useRef<() => void>(saveTextProperty)
-    if (props.readOnly) {
-        saveTextPropertyRef.current = () => null
-    } else {
-        saveTextPropertyRef.current = saveTextProperty
-    }
+    saveTextPropertyRef.current = saveTextProperty
 
     const intl = useIntl()
     const emptyDisplayValue = props.showEmptyPlaceholder ? intl.formatMessage({id: 'PropertyValueElement.empty', defaultMessage: 'Empty'}) : ''

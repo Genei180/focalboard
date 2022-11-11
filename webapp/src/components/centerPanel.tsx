@@ -86,8 +86,6 @@ const CenterPanel = (props: Props) => {
     const currentCard = useAppSelector(getCurrentCard)
     const dispatch = useAppDispatch()
 
-    // empty dependency array yields behavior like `componentDidMount`, it only runs _once_
-    // https://stackoverflow.com/a/58579462
     useEffect(() => {
         TelemetryClient.trackEvent(TelemetryCategory, TelemetryActions.ViewBoard, {board: props.board.id, view: props.activeView.id, viewType: props.activeView.fields.viewType})
     }, [])
@@ -249,6 +247,7 @@ const CenterPanel = (props: Props) => {
     }, [prepareBoardsTour, shouldStartBoardsTour])
 
     useEffect(() => {
+        TelemetryClient.trackEvent(TelemetryCategory, TelemetryActions.ViewBoard, {board: props.board.id, view: props.activeView.id, viewType: props.activeView.fields.viewType})
         startBoardsTour()
     })
 

@@ -333,7 +333,7 @@ exports[`components/table/TableRow should match snapshot, isSelected 1`] = `
 exports[`components/table/TableRow should match snapshot, read-only 1`] = `
 <div>
   <div
-    class="TableRow octo-table-row readonly"
+    class="TableRow octo-table-row"
     draggable="true"
     style="opacity: 1;"
   >

@@ -6,14 +6,14 @@ exports[`components/contentBlock return commentBlock and click on menuwrapper 1`
     class="rowContents"
   >
     <div
-      class="ContentBlock octo-block menuOpened"
+      class="ContentBlock octo-block"
     >
       <div
         class="octo-block-margin"
       >
         <div
           aria-label="menuwrapper"
-          class="MenuWrapper override menuOpened"
+          class="MenuWrapper"
           role="button"
         >
           <button

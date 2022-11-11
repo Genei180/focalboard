@@ -34,6 +34,10 @@
         position: absolute;
         right: 10px;
         top: 10px;
+
+        .IconButton {
+            background-color: rgba(var(--center-channel-color-rgb), 0.13);
+        }
     }
 
     .gallery-item {

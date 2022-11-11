@@ -7,7 +7,7 @@ exports[`components/cardDetail/cardDetailContentsMenu return cardDetailContentsM
   >
     <div
       aria-label="menuwrapper"
-      class="MenuWrapper override menuOpened"
+      class="MenuWrapper"
       role="button"
     >
       <button
@@ -222,7 +222,7 @@ exports[`components/cardDetail/cardDetailContentsMenu return cardDetailContentsM
   >
     <div
       aria-label="menuwrapper"
-      class="MenuWrapper override menuOpened"
+      class="MenuWrapper"
       role="button"
     >
       <button
@@ -437,7 +437,7 @@ exports[`components/cardDetail/cardDetailContentsMenu return cardDetailContentsM
   >
     <div
       aria-label="menuwrapper"
-      class="MenuWrapper override menuOpened"
+      class="MenuWrapper"
       role="button"
     >
       <button

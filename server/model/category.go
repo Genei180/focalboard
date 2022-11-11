@@ -2,16 +2,10 @@ package model
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"strings"
 
 	"github.com/mattermost/focalboard/server/utils"
-)
-
-const (
-	CategoryTypeSystem = "system"
-	CategoryTypeCustom = "custom"
 )
 
 // Category is a board category
@@ -48,19 +42,12 @@ type Category struct {
 	// Category's state in client side
 	// required: true
 	Collapsed bool `json:"collapsed"`
-
-	// Category's type
-	// required: true
-	Type string `json:"type"`
 }
 
 func (c *Category) Hydrate() {
 	c.ID = utils.NewID(utils.IDTypeNone)
 	c.CreateAt = utils.GetMillis()
 	c.UpdateAt = c.CreateAt
-	if c.Type == "" {
-		c.Type = CategoryTypeCustom
-	}
 }
 
 func (c *Category) IsValid() error {
@@ -78,10 +65,6 @@ func (c *Category) IsValid() error {
 
 	if strings.TrimSpace(c.TeamID) == "" {
 		return NewErrInvalidCategory("category team id ID cannot be empty")
-	}
-
-	if c.Type != CategoryTypeCustom && c.Type != CategoryTypeSystem {
-		return NewErrInvalidCategory(fmt.Sprintf("category type is invalid. Allowed types: %s and %s", CategoryTypeSystem, CategoryTypeCustom))
 	}
 
 	return nil
